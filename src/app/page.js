@@ -2,12 +2,13 @@
 
 import { Box, Grid, Container } from "@mui/material";
 import ContactCard from "@/components/leads/contactCard";
-import LeadDetailsForm from "@/components/leads/LeadDetailsForm";
-// import TaskPanel from "@/components/leads/TaskPanel";
-// import ActivityTimeline from "@/components/leads/ActivityTimeline";
+import LeadDetailsForm from "@/components/leads/leadDetailsForm";
+import TaskPanel from "@/components/leads/taskPanel";
+import ActivityTimeline from "@/components/leads/activityTimeLine";
 // import NotesSection from "@/components/leads/NotesSection";
 // import OfferHistory from "@/components/leads/OfferHistory";
 import { motion } from "framer-motion";
+import { taskPanel, taskPanelOffers } from "@/dummyData";
 
 export default function Home() {
   return (
@@ -17,9 +18,9 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           {/* LEFT SIDE */}
-          <Grid item xs={12} md={6} size={6}>
+          <Grid size={{ xs: 6 }}>
             <Box display="flex" flexDirection="column" gap={2}>
               <ContactCard />
               <LeadDetailsForm />
@@ -27,12 +28,17 @@ export default function Home() {
           </Grid>
 
           {/* RIGHT SIDE */}
-          <Grid item xs={12} md={6} size={6}>
+          <Grid size={{ xs: 6 }}>
             <Box display="flex" flexDirection="column" gap={2}>
-              ss
-              {/* <TaskPanel />
+              <TaskPanel initialTasks={taskPanel} title={"Tasks"} />
               <ActivityTimeline />
-              <NotesSection />
+              <TaskPanel
+                initialTasks={taskPanelOffers}
+                title={"Offers"}
+                showInput={false}
+                allowDelete={false}
+              />
+              {/* <NotesSection />
               <OfferHistory /> */}
             </Box>
           </Grid>

@@ -1,4 +1,3 @@
-// components/common/SelectInput.js
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 export default function SelectInput({
@@ -7,10 +6,11 @@ export default function SelectInput({
   defaultValue,
   onChange,
   options = [],
+  minWidth = 250,
   ...props
 }) {
   return (
-    <Box sx={{ minWidth: 250 }}>
+    <Box sx={{ minWidth: minWidth }}>
       <FormControl fullWidth size="small">
         <InputLabel>{label}</InputLabel>
         <Select label={label} defaultValue={defaultValue} fullWidth {...props}>
