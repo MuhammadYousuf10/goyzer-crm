@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 export default function SelectInput({
@@ -14,7 +16,7 @@ export default function SelectInput({
       <FormControl fullWidth size="small">
         <InputLabel>{label}</InputLabel>
         <Select label={label} defaultValue={defaultValue} fullWidth {...props}>
-          {options.map((option) => (
+          {options?.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>

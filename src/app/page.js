@@ -5,10 +5,16 @@ import ContactCard from "@/components/leads/contactCard";
 import LeadDetailsForm from "@/components/leads/leadDetailsForm";
 import TaskPanel from "@/components/leads/taskPanel";
 import ActivityTimeline from "@/components/leads/activityTimeLine";
-// import NotesSection from "@/components/leads/NotesSection";
-// import OfferHistory from "@/components/leads/OfferHistory";
 import { motion } from "framer-motion";
-import { taskPanel, taskPanelOffers } from "@/dummyData";
+import {
+  activityListOfferHistory,
+  filterFieldsActivityHistory,
+  filterFieldsOfferHistory,
+  taskPanel,
+  taskPanelOffers,
+} from "@/dummyData";
+import { activityListHistory } from "@/dummyData";
+import LeadsHeader from "@/components/leads/header";
 
 export default function Home() {
   return (
@@ -18,6 +24,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
+        <LeadsHeader />
         <Grid container spacing={4}>
           {/* LEFT SIDE */}
           <Grid size={{ xs: 6 }}>
@@ -31,15 +38,24 @@ export default function Home() {
           <Grid size={{ xs: 6 }}>
             <Box display="flex" flexDirection="column" gap={2}>
               <TaskPanel initialTasks={taskPanel} title={"Tasks"} />
-              <ActivityTimeline />
+              <ActivityTimeline
+                activityList={activityListHistory}
+                filterFields={filterFieldsActivityHistory}
+                title={"Activity History"}
+                collapsable={true}
+              />
               <TaskPanel
                 initialTasks={taskPanelOffers}
                 title={"Offers"}
                 showInput={false}
                 allowDelete={false}
               />
-              {/* <NotesSection />
-              <OfferHistory /> */}
+              <ActivityTimeline
+                activityList={activityListOfferHistory}
+                filterFields={filterFieldsOfferHistory}
+                title={"Offer History"}
+                collapsable={false}
+              />
             </Box>
           </Grid>
         </Grid>

@@ -1,4 +1,5 @@
-// components/common/BathroomRangeInput.js
+"use client";
+
 import React from "react";
 import { Grid, Box } from "@mui/material";
 import NumberInput from "./NumberInput";

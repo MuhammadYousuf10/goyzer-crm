@@ -9,7 +9,6 @@ import {
   Stack,
   Chip,
   TextField,
-  Button,
   Box,
 } from "@mui/material";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
@@ -91,8 +90,8 @@ export default function TaskPanel({
               </Box>
             )}
 
-            <Stack direction="row" spacing={1} flexWrap="wrap">
-              {tasks.map((task) => (
+            <Stack direction="row" flexWrap="wrap" gap={1}>
+              {tasks?.map((task) => (
                 <Chip
                   key={task.id}
                   label={task.label}
@@ -102,7 +101,6 @@ export default function TaskPanel({
                   deleteIcon={allowDelete ? <CancelIcon /> : undefined}
                   variant="outlined"
                   color="primary"
-                  sx={{ mb: 1 }}
                 />
               ))}
             </Stack>

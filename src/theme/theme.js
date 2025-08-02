@@ -5,15 +5,40 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     mode: "light",
-    primary: { main: "#666CFF" },
-    secondary: { main: "#e91e63" },
+
+    primary: {
+      main: "#1976d2", // blue
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#9c27b0", // purple
+      contrastText: "#fff",
+    },
+    info: {
+      main: "#ffc107", // amber (for "Warm")
+      contrastText: "#000", // good contrast on yellow
+    },
+    warning: {
+      main: "#ff5722", // deep orange (for "Hot")
+      contrastText: "#fff",
+    },
+    success: {
+      main: "#4caf50", // green
+      contrastText: "#fff",
+    },
+    error: {
+      main: "#f44336", // red
+      contrastText: "#fff",
+    },
+
     background: {
-      default: "#f5f7fa",
+      default: "#ffffff",
       paper: "#ffffff",
     },
+
     text: {
-      primary: "#2c3e50",
-      secondary: "#7f8c8d",
+      primary: "#212121",
+      secondary: "#757575",
     },
   },
 
@@ -25,20 +50,11 @@ const theme = createTheme({
     button: { textTransform: "none", fontWeight: 500 },
   },
 
-  shape: { borderRadius: 12 },
+  shape: {
+    borderRadius: 12,
+  },
 
   components: {
-    // MuiCard: {
-    //   styleOverrides: {
-    //     root: {
-    //       // //   borderRadius: "12px",
-    //       boxShadow: "0 2px 12px rgba(0, 0, 0, 0.06)",
-    //       padding: "8px",
-    //       border: "1px solid #4c4e641f",
-    //       borderRadius: "10px",
-    //     },
-    //   },
-    // },
     MuiCard: {
       styleOverrides: {
         root: {
@@ -59,8 +75,6 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           padding: "8px 12px",
-          // backgroundColor: "#f0f2f8",
-          // borderBottom: "1px solid #e0e0e0",
         },
         title: {
           fontSize: "1rem",
@@ -68,6 +82,7 @@ const theme = createTheme({
         },
       },
     },
+
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -80,19 +95,7 @@ const theme = createTheme({
         size: "small",
       },
     },
-    // MuiSelect: {
-    //   styleOverrides: {
-    //     root: {
-    //       width: "100%",
-    //       backgroundColor: "#fff",
-    //       minWidth: "100%",
-    //     },
-    //   },
-    //   defaultProps: {
-    //     variant: "outlined",
-    //     size: "small",
-    //   },
-    // },
+
     MuiSelect: {
       styleOverrides: {
         root: {
@@ -114,6 +117,7 @@ const theme = createTheme({
         },
       },
     },
+
     MuiFormControl: {
       styleOverrides: {
         root: {
