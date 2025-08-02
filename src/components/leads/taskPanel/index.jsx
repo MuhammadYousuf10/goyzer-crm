@@ -24,6 +24,7 @@ export default function TaskPanel({
   showInput = true,
   allowDelete = true,
   onTasksChange,
+  customCardMinHeight,
 }) {
   const [tasks, setTasks] = useState(initialTasks);
   const [newTask, setNewTask] = useState("");
@@ -48,7 +49,7 @@ export default function TaskPanel({
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-      <Card elevation={3}>
+      <Card elevation={3} sx={{ minHeight: customCardMinHeight }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "primary.main", width: 32, height: 32 }}>

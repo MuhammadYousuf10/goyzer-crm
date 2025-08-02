@@ -71,13 +71,13 @@ export default function ActivityTimeline({
             </Avatar>
           }
           title={
-            <Stack direction={"row"} spacing={2}>
+            <Stack direction={"row"} alignItems={"center"} spacing={2}>
               <Box>{title}</Box>
               <Chip
                 label={activityList?.length}
-                size="small"
+                size="medium"
                 variant="outlined"
-                color="info"
+                color="warning"
               />
             </Stack>
           }

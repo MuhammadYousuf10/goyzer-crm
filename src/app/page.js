@@ -15,10 +15,11 @@ import {
 } from "@/dummyData";
 import { activityListHistory } from "@/dummyData";
 import LeadsHeader from "@/components/leads/header";
+import BasicAlerts from "@/components/common/Alert";
 
 export default function Home() {
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <Container maxWidth="xxl" sx={{ py: 4 }}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -27,7 +28,7 @@ export default function Home() {
         <LeadsHeader />
         <Grid container spacing={4}>
           {/* LEFT SIDE */}
-          <Grid size={{ xs: 6 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
             <Box display="flex" flexDirection="column" gap={2}>
               <ContactCard />
               <LeadDetailsForm />
@@ -35,9 +36,13 @@ export default function Home() {
           </Grid>
 
           {/* RIGHT SIDE */}
-          <Grid size={{ xs: 6 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
             <Box display="flex" flexDirection="column" gap={2}>
-              <TaskPanel initialTasks={taskPanel} title={"Tasks"} />
+              <TaskPanel
+                initialTasks={taskPanel}
+                title={"Tasks"}
+                customCardMinHeight={218}
+              />
               <ActivityTimeline
                 activityList={activityListHistory}
                 filterFields={filterFieldsActivityHistory}
@@ -55,6 +60,12 @@ export default function Home() {
                 filterFields={filterFieldsOfferHistory}
                 title={"Offer History"}
                 collapsable={false}
+              />
+              <BasicAlerts
+                alertMessage={
+                  "Notes/Extra Requirements: www.goyzer.com How are you doing"
+                }
+                alertType={"info"}
               />
             </Box>
           </Grid>

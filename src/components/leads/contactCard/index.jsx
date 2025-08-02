@@ -9,10 +9,12 @@ import {
   Chip,
   CardHeader,
   Avatar,
+  Divider,
 } from "@mui/material";
 import { Phone, Email } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import CallIcon from "@mui/icons-material/Call";
+
 export default function ContactCard() {
   return (
     <motion.div
@@ -30,35 +32,36 @@ export default function ContactCard() {
           title="Contact"
         />
         <CardContent>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            mb={2}
-          >
+          <Stack direction="row" alignItems="center" mb={2} spacing={2}>
             <Typography variant="h6" color="primary">
-              Mohamed
+              Mohamed Mamduh
             </Typography>
-            <Chip label="Seller" color="primary" size="small" />
+            <Chip label="Seller" color="success" size="small" />
           </Stack>
 
-          <Typography variant="body2" color="text.secondary" gutterBottom>
-            Lead No: 14856
-          </Typography>
+          <Stack direction="row" alignItems="center" spacing={5}>
+            <Typography variant="body2" gutterBottom>
+              Lead No: 14856
+            </Typography>
+            <Box display="flex" alignItems="center" gap={1}>
+              <Phone fontSize="small" />
+              <Typography variant="body2">+971 55 55582750</Typography>
+            </Box>
+            <Box display="flex" alignItems="center" gap={1}>
+              <Email fontSize="small" />
+              <Typography variant="body2">fahadnaqi1@outlook.com</Typography>
+            </Box>
+          </Stack>
 
-          <Box display="flex" alignItems="center" gap={1} mb={1}>
-            <Phone fontSize="small" />
-            <Typography variant="body2">+971 55 55582750</Typography>
-          </Box>
-
-          <Box display="flex" alignItems="center" gap={1}>
-            <Email fontSize="small" />
-            <Typography variant="body2">fahadnaqi1@outlook.com</Typography>
-          </Box>
-
-          <Typography variant="caption" display="block" mt={2}>
-            128 existing open leads | Calls: 0 | Offers: 0
-          </Typography>
+          <Stack direction="row" alignItems="center" spacing={1} mt={2}>
+            <Typography variant="caption" color="primary">
+              128 existing open leads
+            </Typography>
+            <Divider orientation="vertical" flexItem />
+            <Typography variant="caption">Calls: 0</Typography>
+            <Divider orientation="vertical" flexItem />
+            <Typography variant="caption">Offers: 0</Typography>
+          </Stack>
         </CardContent>
       </Card>
     </motion.div>
